@@ -17,4 +17,8 @@ export class NavbarComponent implements OnInit {
     //   $('#sidenav-1').sidenav({ edge: 'left' });
     // });
   }
+  irAStatistics(){
+    console.log("CLICK FUNCIONANDO");
+    window.location.href = 'http://localhost/tutor/assets/lecturas/statistics.php';
+  }
 }

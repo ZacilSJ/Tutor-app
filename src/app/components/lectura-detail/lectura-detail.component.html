@@ -1,7 +1,26 @@
-<h4>Read and answer carefully</h4>
-<img [src]="lectura.imagen" alt="foto">
+<div class="layout">
+
+  <!-- NAVBAR ANGULAR -->
+    <app-navbar></app-navbar>
+  
+
+  <!-- CONTENIDO DEL LIBRO -->
+<div class="content">
+    <iframe
+      *ngIf="safeSrc"
+      [src]="safeSrc"
+      class="book-frame">
+    </iframe>
+</div>
+    
+
+</div>
+
+
+<!--<h4>Read and answer carefully</h4>
+<img [src]="lectura.imagen" [src]="lectura.imagen"alt="foto">-->
 <!--<a [routerLink]="safeSrc" routerLinkActive="router-link-active" >Click me Routerlink </a>-->
-<p><a class="e2e-dangerous-url" [href]="safeSrc">Click on me!</a></p>
+<!--<p><a class="e2e-dangerous-url" [href]="safeSrc">Click on me!</a></p>-->
 <!--<script>console.log(safeSrc)</script>
 hola: {{safeSrc}}
 <console.log(lectura.href)

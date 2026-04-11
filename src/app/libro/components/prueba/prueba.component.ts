@@ -3,32 +3,32 @@ import {Libro} from '../../../core/models/libro.model';
 
 @Component({
   selector: 'app-prueba',
-  templateUrl: './prueba.component.html',
+  templateUrl:'./prueba.component.html',
   styleUrls: ['./prueba.component.css']
 })
 export class PruebaComponent implements OnInit {
 
-    libro: Libro[]=[
+    libros: Libro[]=[
       {
         id: '1',
-        imagen: 'assets/imagenes/pg160.cover.medium.jpg',
+        imagen: 'assets/imagenes/libroazul.jpg',
         title: 'The Awakening and Selected Short Stories',
         autor: 'Kate Chopin (service)',
-        text: '/dist/front1/assets/libros/160.html'
+        text: 'http://localhost/Tutor/assets/libros/160.html'
       },
       {
         id: '2',
-        imagen: 'assets/imagenes/pg512.cover.medium.jpg',
+        imagen: 'assets/imagenes/libromorado.jpg',
         title: 'Mosses from an Old Manse and Other Stories',
         autor: 'Nathaniel Hawthorne',
-        text: '/dist/front1/assets/libros/512.html'
+        text: 'http://localhost/Tutor/assets/libros/512.html'
       },
       {
         id: '3',
-        imagen: 'assets/imagenes/pg932.cover.medium.jpg',
+        imagen: 'assets/imagenes/libroazulito.jpg',
         title: 'The Fall of the House of Usher',
         autor: 'Edgar Allan Poe',
-        text: '/dist/front1/assets/libros/932.html'
+        text: 'http://localhost/Tutor/assets/libros/932.html'
       },  ]
 
   constructor() { }
@@ -43,8 +43,9 @@ export class PruebaComponent implements OnInit {
     this.items.splice(index, 1);
   }*/
 
-  clickLibro(id: number): void {
-    console.log('libro');
-    console.log(id);
-  }
+  clickLibro(id: string): void {
+  console.log('Libro clickeado:', id);
 }
+
+  }
+

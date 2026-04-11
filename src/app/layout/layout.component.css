@@ -1,4 +1,8 @@
-
+.layout-content {
+    min-height: 100vh;
+    overflow: visible; 
+	
+}
 header, main, footer {
 	padding-left: 300px;
 	padding-right: 200px;
@@ -8,4 +12,4 @@ header, main, footer {
 	header, main, footer {
 		padding-left: 0;
 	}
-}
+} 

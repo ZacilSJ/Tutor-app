@@ -13,18 +13,19 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 export class LibroDetailComponent implements OnInit {
 
   libro: Libro;
-  public safeSrc: SafeResourceUrl;
+  //public safeSrc: SafeResourceUrl;
 
   constructor(
     private route: ActivatedRoute,
     private libroSService: LibroSService,
-    private sanitizer: DomSanitizer) { }
+  // private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
       this.libro = this.libroSService.getLibro(id);
-      this.safeSrc=this.sanitizer.bypassSecurityTrustUrl(this.libro.text)
+      //this.safeSrc=this.sanitizer.bypassSecurityTrustResourceUrl(this.libro.text)
     });
   }
 }

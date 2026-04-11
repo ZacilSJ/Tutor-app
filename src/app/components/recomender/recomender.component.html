@@ -1,19 +1,17 @@
 <app-navbar></app-navbar>
-<p>Choose today reading</p>
-<p>We recommend the reading excercise {{this.mokId}}</p>
-<!--<button (click)="genera()">Genera mis lecturas</button>-->
-<div class="lectura-grid">
-    <app-lectura
-    *ngFor="let lectura of lectura"
-    (lecturaClicked)="clickLectura($event)"
-    [lectura]="lectura">
-    </app-lectura>
-  </div>
 
- <!-- <div class="lectura-grid">  Esto funciona para imprimir un sub array de lecturas
-    <app-lectura
-    *ngFor="let lectura of seleccionado"
-    (lecturaClicked)="clickLectura($event)"
-    [lectura]="lectura">
-    </app-lectura>
-  </div>-->
+<p class="titulo-lector">Choose today reading</p>
+<p class="subtitulo">
+  We recommend the reading exercise 
+</p>
+
+<div class="lectura-grid">
+  <app-lectura
+      *ngFor="let item of lectura"
+      [lectura]="item"
+      (lecturaClicked)="clickLectura($event)">
+  </app-lectura>
+  
+</div>
+
+<p class="ack">Image acknowledgements: freepik</p>

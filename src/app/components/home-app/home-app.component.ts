@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../../core/service/users.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-app',
   templateUrl: './home-app.component.html',
@@ -8,7 +8,9 @@ import {UsersService} from '../../core/service/users.service';
 })
 export class HomeAppComponent implements OnInit {
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService
+    , private router: Router
+  ) { }
 
   ngOnInit(){
     //this.getUserLogged();
@@ -18,5 +20,8 @@ export class HomeAppComponent implements OnInit {
     //this.usersService.getUser().subscribe((user)=>{
     //  console.log(user);
     //});
+  }
+  irAStatistics(){
+    window.location.href = 'http://localhost/tutor/assets/lecturas/statistics.php';
   }
 }

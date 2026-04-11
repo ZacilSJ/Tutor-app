@@ -26,10 +26,12 @@ export class LecturaDetailComponent implements OnInit {
        this.route.params.subscribe((params: Params) => {
        const id = params.id;
        this.lectura = this.LecturasService.getLectura(id);
+       console.log('ID:', id);
+       console.log('LECTURA, this.lectura');
       //this.sanitizer.bypassSecurityTrustResourceUrl(this.lectura.href);//quizás mal direccionado
       //this.sanitizer.bypassSecurityTrustUrl(this.lectura.href);//quizás mal direccionado
       //console.log(this.lectura.href);
-       this.safeSrc=this.sanitizer.bypassSecurityTrustUrl(this.lectura.href)
+       this.safeSrc=this.sanitizer.bypassSecurityTrustUrl(this.lectura.href);
     });
   //}
   }

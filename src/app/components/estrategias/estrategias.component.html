@@ -1,20 +1,27 @@
 <app-navbar></app-navbar>
-<div class="listado">
-  <h5>En esta sección econtrarás tips, ideas y estrategias</h5>
-  <h5>para mejorar tu lectura en inglés</h5>
-  <br>
-  <!--<h1>{{estrategia.title | uppercase}}</h1>-->
-    <!--<app-estrategias>-->
-    <ul class ="hola">
-      <li *ngFor="let estrategia of estrategia">
-        <!--<button type="button" (click)="clickestrategia(estrategia.id)">
-          <span class="badge">{{estrategia.title}}</span>
-        </button>-->
-        <p><strong>{{estrategia.title}}</strong></p>
-        <p>{{estrategia.text}}
-        </p>
-        <br>
-      </li>
-    </ul>
-</div>
 
+<div class="listado">
+  <h6>En esta sección encontrarás tips, ideas y estrategias</h6>
+  <h6>para mejorar tu lectura en inglés</h6>
+  <br>
+
+  <div class="grid">
+
+    <div class="item" *ngFor="let estrategia of estrategia">
+
+      <!-- Muestra TODAS las imágenes y textos dentro de items[] -->
+      <div class="imagenes" *ngFor="let item of estrategia.items">
+        <img class="icono" [src]="item.img" alt="imagen estrategia">
+        <p class="item-text">{{ item.text }}</p>
+      </div>
+
+      <div class="texto">
+        <p class="titulo"><strong>{{ estrategia.title }}</strong></p>
+        <p class="descripcion">{{ estrategia.text }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

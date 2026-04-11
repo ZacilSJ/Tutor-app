@@ -1,0 +1,19 @@
+.cuestionario-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 900px;
+  max-width: 900px;
+   border: none; 
+  
+}
+
+body {
+  margin: 0;
+}

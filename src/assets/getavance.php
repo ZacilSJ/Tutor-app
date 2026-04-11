@@ -1,19 +1,17 @@
 <?php
 session_start();
-  require("conexion.php");
-  $con=retornarConexion();
+require("conexion.php");
+$con = retornarConexion();
 
-  $loginUser=$_SESSION['SessionUsuario'];
-  $loginUserInt=intval($loginUser);
+$loginUser = $_SESSION['idUsuario'] ?? 0;
 
-  $idLectura=mysqli_query($con,"select RDL2 from avance where usuario=$loginUserInt");
-  $row=mysqli_num_rows($idLectura);
-  if ($row>0) {
-    $lecturaActual=$idLectura->fetch_array()[0];
-    $avance=json_encode($lecturaActual);
-    echo $avance; } //$vec,  AQUI Mandaba un letreto
-  else {echo "ATENCION !!!! error, por favor intente nuevamente.";}
-  mysqli_close($con);
-?>
+$idLectura = mysqli_query($con,"SELECT RDL2 FROM avance WHERE usuario_id='$loginUser'");
 
+if ($idLectura && mysqli_num_rows($idLectura) > 0) {
+    $row = mysqli_fetch_assoc($idLectura);
+    echo json_encode($row['RDL2']);
+} else {
+    echo json_encode(0);
+}
 
+mysqli_close($con);?>

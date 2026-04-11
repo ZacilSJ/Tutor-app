@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<p>Extensive reading section</p>
+<h5 class="titulo-free-reading">Extensive reading section</h5>
 <!--<p>prueba works! Escriba el nombre del elemento a agregar: Nicolas</p>
 <input type="text" [(ngModel)]="title">
 {{title}}
@@ -17,8 +17,9 @@
 
 <div class="libro-grid">
     <app-libro
-    *ngFor="let libro of libro"
+    *ngFor="let libro of libros"
+    [libro]="libro"
     (libroClicked)="clickLibro($event)"
-    [libro]="libro">
+    >
     </app-libro>
   </div>

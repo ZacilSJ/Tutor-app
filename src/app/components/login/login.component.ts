@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from '../../core/service/users.service';
+import { UsersService } from '../../core/service/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,55 +8,51 @@ import {UsersService} from '../../core/service/users.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user: string;
-  password: string;
-  usuario:string;
+  user: string = '';
+  password: string = '';
+  usuario: string = '';
 
-  constructor(private userService: UsersService){}
+  // Haz público el servicio si quieres llamarlo desde el template directamente
+  constructor(public userService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
-    sessionStorage.clear()
-   }
-
-   ngOnChanges(){
-    console.log("tipo de variable", typeof(this.usuario));
-    console.log("usuario:", this.usuario);  //typeof(var);
-    //console.log("longitud", this.usuario.length);
-
-   }
-
-
-  login() {   // no es la mejor práctica llamar servicios en el constructor, deberían llamarse en el ngOnInit
-    //const user = { user: this.user, password: this.password };
-    this.userService.buscausuario(this.user,this.password).subscribe((data) => this.usuario=data); //data[0]
-    error=>{console.log(error); }
-    console.log(this.usuario);
-    /*if (this.usuario !== undefined || (this.usuario.length>4 && this.usuario.length<10)) {*/
-      this.userService.setToken(this.usuario);
-      console.log("almacenado:", sessionStorage.getItem('ident'))
-    //}
+    sessionStorage.clear();
   }
 
-  estaAutenticado():boolean{
+  login() {
+    if (!this.user || !this.password) {
+      alert('Ingresa usuario/email y contraseña');
+      return;
+    }
+
+    this.userService.buscausuario(this.user, this.password).subscribe({
+      next: (texto: string) => {
+        // Si el backend respondió el usuario (texto simple), lo guardamos
+        if (texto && !texto.startsWith('ATENCION') && !texto.toLowerCase().includes('inválidas')) {
+          this.usuario = texto;
+          this.userService.setToken(texto);
+          console.log("almacenado:", sessionStorage.getItem('ident'));
+
+          // Redirige a donde corresponda
+          // this.router.navigate(['/home']);
+        } else {
+          alert(texto || 'Credenciales inválidas');
+        }
+      },
+      error: (err) => {
+        console.error(err);
+        alert('No se pudo iniciar sesión');
+      }
+    });
+  }
+
+  // Opción A: método para el *ngIf del template
+  estaAutenticado(): boolean {
     return this.userService.estaAutenticado();
   }
 
-  ngOnDestroy():void{
-
-  }
-  /*login() {   // no es la mejor práctica llamar servicios en el constructor, deberían llamarse en el ngOnInit
-    const user = { user: this.user, password: this.password };
-    this.userService.buscausuario(this.user,this.password).subscribe((data) => {
-      //console.log(data);
-      this.usuario=data[0]
-      this.userService.setToken(this.usuario);
-      console.log('este es el usuario')  observe que faltan varias comas y punto y coma
-      console.log(this.usuario)
-      },
-      error => {
-        console.log(error);
-      });
-
-  }*/
-
+  // Opción B alternativa: si prefieres usar un getter en el template sin paréntesis
+  // get autenticado(): boolean {
+  //   return this.userService.estaAutenticado();
+  // }
 }

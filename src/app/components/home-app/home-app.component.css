@@ -1,11 +1,71 @@
-
+/* Ajustes generales del layout */
 header, main, footer {
-	padding-left: 300px;
-	padding-right: 200px;
+  padding-left: 300px;
+  padding-right: 200px;
 }
 
-@media only screen and (max-width : 992px) {
-	header, main, footer {
-		padding-left: 0;
-	}
+@media only screen and (max-width: 992px) {
+  header, main, footer {
+    padding-left: 0px;
+    padding-right: 0;
+  }
+}
+/* Texto de bienvenida */
+.welcome-text {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* Contenedor general para organizar los bloques */
+.container-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 260px);
+  
+  justify-content: center;/* EXACTAMENTE 2 columnas */
+  gap:  30px 50px;
+  padding: 20px;
+  /*place-items: center;*/
+
+}
+
+/* Contenedores individuales */
+.custom-box {
+  width: 260px;
+  height: 260px;
+  background-color: #e7edf3;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  /* ESTO ES LO QUE PERMITE QUE EL <a> REDIRIJA */
+  pointer-events: auto;
+}
+
+/* IMPORTANTE:
+   Esto permite que TODO el contenido interno del contenedor
+   NO Bloquee el clic del enlace <a>. */
+
+
+/* Efecto hover */
+.custom-box:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen centrada dentro del container */
+.custom-box img {
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* Figcaption estilo */
+.custom-box figcaption {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }

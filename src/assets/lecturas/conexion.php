@@ -1,9 +1,14 @@
 <?php
 function retornarConexion() {
-  $con=mysqli_connect("148.228.13.11:3307","bdtutor","1B0Gc8q","bdtutor");
+  $servidor = "localhost";
+  $usuario = "root";  
+  $password = "";
+  $bd = "bdtutor";
+
+  $con=mysqli_connect("$servidor", "$usuario", "$password","$bd");
   if (!$con) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_errno() . PHP_EOL;
     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }

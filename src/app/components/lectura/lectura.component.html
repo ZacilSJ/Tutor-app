@@ -1,7 +1,22 @@
-<h5 appHighlight>Reading excercise: {{ lectura.id | uppercase }}</h5>
-<h5 appHighlight>{{ lectura.title | uppercase }}</h5>
-<img [src]="lectura.imagen" alt="imagen">
-<p></p>
-<!--<a href="/assets/lecturas/cuestionario_4410.htm">Start</a>-->
-<a [routerLink]="['/lectura', lectura.id]">Start</a>
+<div class="card">
+  <div class="header">Reading</div>
+
+  <img
+    class="imagen"
+    [src]="lectura.imagen"
+    alt="lectura"
+  />
+
+  <div class="titulo">{{ lectura.title }}</div>
+
+<button 
+  class="btn-start"
+  [routerLink]="idsBloqueados.includes(lectura.id) ? null : ['/cuestionario', lectura.id]"
+  [disabled]="idsBloqueados.includes(lectura.id)">
+  
+  {{ idsBloqueados.includes(lectura.id) ? 'Locked ' : 'Start' }}
+
+</button>
+
+</div>
 

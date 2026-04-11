@@ -1,49 +1,54 @@
+
 <section class="principal">
-    <div class="row login">
-        <div class="col s12 l4 offset-l4">
-            <div class="card">
-                <div class="card-action blue darken-4 white-text center-align">
-                    <h3>
-                        Login
-                    </h3>
-                </div>
-                <div class="card-content">
-                    <div class="form-field">
-                        <label for="username">User</label>
-                        <input type="text" id="username" [(ngModel)]="user" requiered="required">
-                    </div>
-                    <div class="form-field">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" [(ngModel)]="password" requiered="required">
-                    </div>
-                    <div class="form-field">
-                      {{this.usuario}}
-                    <!--    <label for="remember">
-                            <input type="checkbox" id="remember" />
-                            <span>Remember me</span>
-                        </label>-->
-                    </div>
-                    <div class="form-field left-align">
-                        <button class="btn-large pink accent-3" (click)="login()"><!-- [routerLink]="['/bienvenido']" routerLinkActive="router-link-active" >-->  <!--//aquí manda a llamar inicio-->
-                            Buscar
-                        </button>&nbsp;&ensp;
-                        <button *ngIf="estaAutenticado()" class="btn-large pink accent-3" id="entrar" [routerLink]="['/homeapp']" routerLinkActive="router-link-active" >
-                          Entrar
-                      </button><!--*ngif="this.usuario=='Buena lectura'"-->
-                    </div>
-                    <div class="form-field center-align">
+
+    <div class="contenedor">
+
+        <!-- IZQUIERDA: tu login -->
+        <div class="lado-izquierdo">
+            <div class="row login">
+                <div class="login-container">
+                    <div class="card">
+                        <div class="card-action white white-585435 black-text center-align">
+                            <h3>Log in</h3>
+                            <h5>Welcome back!</h5>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="form-field">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" [(ngModel)]="user" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" [(ngModel)]="password" required>
+                            </div>
+
+                            <div class="form-field left-align">
+                                <button class="btn-large morado" (click)="login()">Look for</button>
+                                &nbsp;&ensp;
+                                <button *ngIf="estaAutenticado()" class="btn-large morado" id="entrar"
+                                    [routerLink]="['/homeapp']" routerLinkActive="router-link-active">
+                                    Log in
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="center-align boxi">
+                           Don't have an account?
+                            <a [routerLink]="['/signup']">Sign up here</a>
+                        </div>
 
                     </div>
-                </div>
-
-                <div class="center-align boxi">
-                    ¿No tiene cuenta?
-                    <a [routerLink]="['/signup']" routerLinkActive="router-link-active">Registrate aquí</a>
-                    <br/>
-                    <!--Are you a teacher
-                    <a [routerLink]="['/loginT']" routerLinkActive="router-link-active" >Click here</a>   comentado el 23 /10/23-->
                 </div>
             </div>
+        </div>
+
+        <!-- DERECHA: panel morado o imagen -->
+        <div class="lado-derecho">
+            <!-- Puedes poner una imagen dentro -->
+            <img src="assets/imagenes/Tutor-logo.png" alt="Ilustración">
         </div>
 
     </div>

@@ -1,73 +1,56 @@
-<div class="container">
-    <h2 class="center">Registro</h2>
-    <div class="row">
-        <form class="col s12" id="reg-form" [formGroup]="formularioRegistro" (ngSubmit)="guardarregistro()">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="first_name" type="text" formControlName="name" required> <!--class="validate"  Lo modifiqué yo-->
-                    <p *ngIf="this.formularioRegistro.get('name').hasError('required')">Escriba un nombre</p>
-                    <p *ngIf="this.formularioRegistro.get('name').hasError('minlength')">Escriba mínimo 3 caracteres</p>
-                    <label for="first_name">Nombre</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" formControlName="lastname" class="validate" required>
-                    <p *ngIf="this.formularioRegistro.get('lastname').hasError('required')">Escriba un apellido</p>
-                    <p *ngIf="this.formularioRegistro.get('lastname').hasError('minlength')">Escriba mínimo 3 caracteres</p>
-                    <label for="last_name">Apellido</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" type="email" formControlName="email" class="validate" required>
-                    <p *ngIf="this.formularioRegistro.get('email').hasError('required')">Escriba un correo electrónico válido</p>
-                    <label for="email">Email</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                  <input id="user" type="text" formControlName="user" class="validate" required>
-                  <p *ngIf="this.formularioRegistro.get('user').hasError('required')">Define tu nombre de usuario</p>
-                  <p *ngIf="this.formularioRegistro.get('user').hasError('minlength')">Escriba mínimo 4 caracteres</p>
-                  <label for="user">Usuario</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="password" type="password" formControlName="password" class="validate" required>
-                    <p *ngIf="this.formularioRegistro.get('password').hasError('required')">Define tu contraseña de acceso</p>
-                    <p *ngIf="this.formularioRegistro.get('password').hasError('minlength')">Escriba mínimo 4 caracteres</p>
-                    <label for="password">Password</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
+<div class="registro-wrapper">
 
-                </div>
+  <!-- COLUMNA IZQUIERDA (Formulario) -->
+  <div class="container registro-form">
+    <h2 class="center">Sign Up</h2>
 
-                <div class="input-field col s6">
-                    <button id="miBoton" class="btn btn-large btn-register waves-effect waves-light red" type="submit"
-                        name="action" [disabled]="formularioRegistro.invalid">Register
-                        <i class="material-icons right">done</i>
-                    </button>
-                </div>
-             </div>
-        </form>
+    <form [formGroup]="formularioRegistro" (ngSubmit)="guardarregistro()">
 
-        <!--micodigo-
-        <p>
-          Nombre:<input type="text" [(ngModel)]="name" />
-          <span *ngIf="this.formularioRegistro.get('name')?.errors?.['required']">(Escriba un nombre)</span>
-        </p>
-        <p>
-          Apellido:<input type="text" [(ngModel)]="lastname" />
-        </p>
-        <p>
-          correo electrónico:<input type="text" [(ngModel)]="email" required="required"/>
-        </p>
-        <p>
-          contraseña:<input type="password"  minlength="4" [(ngModel)]="password" required="required"/>
-        </p>
-        <p><button (click)="guardarregistro()">Agregar</button>
-        </p>-->
-    </div>
-    <a title="Login" [routerLink]="['']" routerLinkActive="router-link-active"
-        class="ngl btn-floating btn-large waves-effect waves-light red"><i class="material-icons">input</i></a>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" formControlName="name" required>
+          <label for="first_name">Name</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input id="last_name" type="text" formControlName="lastname" required>
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" formControlName="email" required>
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user" type="text" formControlName="user" required>
+          <label for="user">Username</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input id="password" type="password" formControlName="password" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <!-- BOTÓN PRINCIPAL -->
+      <div class="row right-align">
+        <button class="btn btn-custom">
+        SIGN UP
+      </button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- COLUMNA DERECHA (Imagen) -->
+  <div class="registro-panel">
+    <img class="icon-registro" src="assets/imagenes/Tutor-logo.png" alt="icon">
+  </div>
+
 </div>

@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   color: #fff;
-  background: linear-gradient(-45deg, #5269ee, #e73c7e, #381768, #23d5ab);
+  background: linear-gradient(-45deg, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
   background-size: cove;
   position: absolute;
 }
@@ -30,11 +30,11 @@
 
 .login button:hover{
   padding: 0px 40px;
-  background-color: rgb(194, 35, 70) !important;
+  background-color: rgb(99, 7, 132) !important;
 
 }
 a{
-  color: gray;
+  color: rgb(255, 255, 255);
 }
 a:hover{
   color: white;

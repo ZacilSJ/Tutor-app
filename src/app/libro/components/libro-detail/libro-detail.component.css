@@ -1,0 +1,17 @@
+.libro-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-left: 500px;
+  max-width: 2000px;
+  margin-top: 50px;
+}
+
+.libro-imagen img {
+  width: 450px;
+}
+
+.libro-info {
+  text-align: left;
+}
+

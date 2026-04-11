@@ -1,6 +1,6 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EstrategiaService } from 'src/app/core/service/estrategia.service';
-import { Estrategia} from 'src/app/core/models/estrategia.model'
+import { Estrategia } from 'src/app/core/models/estrategia.model';
 
 @Component({
   selector: 'app-estrategias',
@@ -9,35 +9,24 @@ import { Estrategia} from 'src/app/core/models/estrategia.model'
 })
 export class EstrategiasComponent implements OnInit {
 
-  //@Input() estrategia: Estrategia;
   @Output() estrategiaClicked: EventEmitter<any> = new EventEmitter();
-  articulo: any;
-  //selectedEstrategia=this.estrategia;
-  /*estrategia={
-    id:0,
-    title:"titulo",
-    text:"vacío"
-  }*/
-  estrategia: Estrategia[]
+  estrategia: Estrategia[] = [];
 
   constructor(private estrategiasService: EstrategiaService) { }
 
   ngOnInit() {
-        this.getAllEstrategias();
+    this.getAllEstrategias();
   }
 
-  getAllEstrategias(){
-    this.estrategia=this.estrategiasService.getAllEstrategias();//.subscribe((result:any)=>this.articulo=result);
-  }
-  getEstrategia(id:number) {
-   // this.EstrategiasService.getEstrategia(id).subscribe((articulo:any)=>this.estrategia=articulo[0]);
-   this.estrategiaClicked.emit(this.estrategia)
+  getAllEstrategias() {
+    this.estrategia = this.estrategiasService.getAllEstrategias();
   }
 
-  clickestrategia(id:number) {
-    console.log(id);
-    //this.estrategia=this.estrategiasService.getEstrategia(id);
+  getEstrategia(id: number) {
+    this.estrategiaClicked.emit(this.estrategia.find(e => e.id === id));
   }
-  baja(){}
-  seleccionar(){}
+
+  clickEstrategia(id: number) {
+    console.log("Estrategia seleccionada:", id);
+  }
 }

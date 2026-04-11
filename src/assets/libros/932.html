@@ -76,10 +76,21 @@
         margin-right: auto;
         }</style><title>The Project Gutenberg eBook The Fall of the House of
 Usher, by Edgar Allan Poe</title>
-<style>div.book {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: justify
+<style>body {
+     margin: 80px;
+    max-width: 800px;
+    padding: 3em;
+    background: #fffdf8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: justify;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 0 0 1px #ddd,
+                0 12px 30px rgba(0,0,0,0.15);
     }
 p {
     text-indent: 2em;
@@ -134,6 +145,11 @@ before using this eBook.</div>
 <span>*** START OF THE PROJECT GUTENBERG EBOOK THE FALL OF THE HOUSE OF USHER ***</span>
 </div></section><pre></pre>
 
+ <iframe
+      *ngIf="lectura?.text"
+      [src]="lectura.text | safeUrl"
+      class="book-frame">
+    </iframe>
 
 
 <div class="book">

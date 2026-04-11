@@ -7,13 +7,14 @@ import { Observable } from "rxjs";
 })
 export class UsersService {
 
-  url='../front1/assets/';  // aquí se coloca la ruta donde están guardados los php dentro de assets
+  private base = 'http://localhost/Tutor/assets/';  // aquí se coloca la ruta donde están guardados los php dentro de assets
 
   constructor(private http: HttpClient) {}
 
   guardarregistro(registro:any):Observable<any> {
-    console.log(registro)
-    return this.http.post(`${this.url}guardarregistro.php`, JSON.stringify(registro), {responseType:'text'});
+ return this.http.post(this.base + 'guardarregistro.php', registro,
+    //{ headers: { 'Content-Type': 'application/json' } }
+  );
   }
 
   buscausuario(user: string, password: string):Observable<any> {
@@ -21,8 +22,8 @@ export class UsersService {
     console.log(user,password)  //se ejectua hasta aquí, pero voy a solicitar sólo la consulta, porque no encuentra archivo con datos incluidos
     //user=JSON.stringify(user)
     //password=JSON.stringify(password)
-    return this.http.get(`${this.url}buscausuario.php?user=${user}&password=${password}`, {responseType:'text'});//, JSON.stringify(user);
-    //return this.http.get(`${this.url}buscausuario.php`, {responseType:'text'});//, JSON.stringify(user);
+    return this.http.get(`${this.base}/buscausuario.php?user=${user}&password=${password}`, {responseType:'text'});//, JSON.stringify(user);
+    //return this.http.get(`${this.base}buscausuario.php`, {responseType:'text'});//, JSON.stringify(user);
   }
 
   setToken(token: string) {
@@ -33,7 +34,7 @@ export class UsersService {
   }
 
   getUser(){
-    return this.http.get(`${this.url}buscausuario.php`)
+    return this.http.get(`${this.base}buscausuario.php`)
   }
 
   getUserLogged(){

@@ -1,1 +1,25 @@
 /*Este bloque se alimneta del componente libro*/
+.libro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 50px;
+  padding: 20px;
+  margin-left: 250px;
+}
+
+.titulo-free-reading{
+  margin-left: 600px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Esto le da color de fondo a cada container/app-libro */
+app-libro {
+  background-color: #d3e8fa; /* azul muy suave */
+  border-radius: 12px;        /* bordes redondeados */
+  padding: 10px;              /* espacio interno */
+  box-shadow: 0 2px 6px rgba(255, 254, 254, 0.2); /* sombra opcional */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

@@ -1,25 +1,22 @@
-<html>
-  <head>
-    <style>
-    aside {
-      width: 30%;
-      padding-left: 15px;
-      margin-left: 15px;
-      float: right;
-      font-style: italic;
-      background-color: lightgray;
-    }
-    </style>
-    </head>
-<div>
+<div class="libro-container">
+  <div class="libro-imagen">
     <img [src]="libro.imagen" alt="portada">
-</div>
-<div>
+  </div>
+
+  <div class="libro-info">
     <ul>
-        <li>Título: {{libro.title}}</li>
-        <li>Autor: {{libro.autor}}</li>
+      <li>Título: {{ libro.title }}</li>
+      <li>Autor: {{ libro.autor }}</li>
     </ul>
-   <p><a class="e2e-dangerous-url" [href]="safeSrc">Click on me to read!</a></p>
+
+    <p>
+      <a
+        class="e2e-dangerous-url"
+        [routerLink]="['/libro', libro.id, 'leer']">
+        Click on me to read!
+      </a>
+    </p>
+  </div>
 </div>
-</html>
+
 

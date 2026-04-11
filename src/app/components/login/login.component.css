@@ -1,44 +1,63 @@
-.principal{
+/* División en dos columnas */
+.contenedor {
+  display: flex;
   width: 100vw;
   height: 100vh;
-  color: #fff;
-  background: linear-gradient(-45deg, #5269ee, #e73c7e, #381768, #23d5ab);
-  background-size: cove;
-  position: absolute;
 }
 
-.login{
-  margin-top: 25vh;
+/* IZQUIERDA */
+.lado-izquierdo {
+  width: 60%;
+  background: white;
+  padding-left: 80px;  /* AJUSTA para moverlo */
+  padding-top: 150px;
 }
 
-.login .card{
-  background: rgba(0, 0, 0, .6);
+/* DERECHA (panel morado) */
+.lado-derecho {
+  width: 45%;
+  background: #435585;
+  
 }
 
-.login label {
-  font-size: 16px;
-  color: #ccc;
-}
-.login input{
-  font-size: 22px !important;
-  color: #ccc !important;
-}
-
-.login button{
-  margin-top: 3vh;
+/* Ajustar login (quita lo que lo mandaba a la derecha) */
+.login {
+  margin-top: 0;
+  height: auto;
+  right: 0;      /* ← quita el desplazamiento */
+  justify-content: flex-start; /* alinea normal */
 }
 
-.login button:hover{
-  padding: 0px 40px;
-  background-color: rgb(194, 35, 70) !important;
+/* Botón morado */
+.morado {
+  background-color: #435585 !important;
+  color: white !important;
+  border-radius: 12px;
+}
 
+/* Inputs como Figma */
+.login input {
+  color: black !important;
+  background: #b9b0ac;
+  border-radius: 6px;
 }
-a{
-  color: gray;
+
+/* Caja del login */
+.login-container {
+  background: white !important;
+  padding: 30px;
+  border-radius: 12px;
+  
 }
-a:hover{
-  color: white;
+.lado-derecho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.boxi{
-  height: 50px;
+
+.lado-derecho img {
+ width: 100%;
+  max-width: 700px; 
+  height: auto;
 }
+

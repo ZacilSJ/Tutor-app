@@ -1,48 +1,59 @@
-    <p>Welcome!, please select today practice</p>
+<div class="welcome-text">
+  Welcome!, please select today practice
+</div>
+
+<div class="container-wrapper">
+
+  <!-- PRACTICE -->
+  <div class="custom-box">
     <a [routerLink]="['/recomender']" routerLinkActive="router-link-active">
-        <figure>
-       <img src="./assets/imagenes/Student2.png"
-        alt="Practice: Clik here for practice"
-        width= 300>
+      <figure>
+       <img src="./assets/imagenes/homework.png"
+             alt="Practice: Click here for practice"
+             width="150">
         <figcaption>Practice</figcaption>
-        </figure>
+      </figure>
     </a>
+  </div>
+
+  <!-- STRATEGIES -->
+  <div class="custom-box">
     <a [routerLink]="['/strategies']" routerLinkActive="router-link-active">
       <figure>
-      <img src="./assets/imagenes/Strategy.png"
-      alt="Strategies: Click here to know strategies"
-      width= 300>
-      <figcaption>Strategies</figcaption>
+        <img src="./assets/imagenes/target.png"
+             alt="Strategies: Click here to know strategies"
+             width="150">
+        <figcaption>Strategies</figcaption>
       </figure>
-  </a>
+    </a>
+  </div>
+
+  <!-- SHORT BOOKS -->
+  <div class="custom-box">
     <a [routerLink]="['/prueba']" routerLinkActive="router-link-active">
-        <figure>
-        <img src="./assets/imagenes/Book-smiley-cup.png"
-        alt="Books: Click here to read free"
-        width= 300>
+      <figure>
+        <img src="./assets/imagenes/book.png"
+             alt="Books: Click here to read free"
+             width="150">
         <figcaption>Short Books</figcaption>
-        </figure>
+      </figure>
     </a>
-     <a [routerLink]="['/statistics']" routerLinkActive="router-link-active">
-        <figure>
-        <img src="./assets/imagenes/Estadisticas.jpg"
-        alt="Statistics: Click here to see your advances"
-        width= 300>
-        <figcaption>Statistics</figcaption>
-        </figure>
-    </a>
-<!--     <a href="statistics">
-        <figure>
-        <img src="./assets/imagenes/Estadisticas.jpg"
-        alt="Statistics: Click here to see your advances"
-        width= 300>
-        <figcaption>Statistics</figcaption>
-        </figure>
-    </a> -->
-<div>
-    <p>Image aknowledgments: freepik </p>
-    <!--<a href='https://www.freepik.es/fotos/dinero'>Photos: Dinero por mdjaff, </a>
-    <a href="https://www.freepik.es/fotos/libro">Libro por freepik, </a>
-    <a href='https://www.freepik.es/vectores/tecnologia'>Vector de Tecnología por stories, </a>
-    <a href="https://www.freepik.es/fotos/personas">Personas por yanalya - www.freepik.es</a>-->
+  </div>
+
+  <!-- STATISTICS -->
+ <div class="custom-box">
+  <a [routerLink]="['/statistics']">
+    <figure>
+      <img src="./assets/imagenes/statistics.png" width="150">
+      <figcaption>Statistics</figcaption>
+    </figure>
+  </a>
+</div>
+   
+
+</div>
+
+<!-- Créditos -->
+<div style="text-align: center; margin-top: 20px;">
+  <p>Image acknowledgments: freepik</p>
 </div>

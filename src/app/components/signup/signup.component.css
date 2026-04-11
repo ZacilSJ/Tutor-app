@@ -1,50 +1,45 @@
-.container {
-    background: white;
-    padding: 20px 25px;
-    border: 5px solid #26a69a;
-    width: 550px;
+.registro-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.registro-form {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registro-panel {
+  width: 50%;
+  background: #435585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-registro {
+  width: 700px;
+  opacity: 0.9;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+  .registro-form,
+  .registro-panel {
+    width: 100%;
     height: auto;
-    box-sizing: border-box;
-    position: relative;
-    margin-top: 15vh;
   }
-  .col.s6 > .btn {
-     width: 100%;
-  }
-  .gender-male,.gender-female {
-    display: inline-block;
-  }
-  .gender-female {
-    margin-left: 35px;
-  }
-  radio:required {
-    border-color: red;
-  }
-  .container {
-    animation: showUp 0.5s cubic-bezier(0.18, 1.3, 1, 1) forwards;
-  }
+.btn-custom {
+  background-color: #435585 !important;
+}
 
-  @keyframes showUp {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transoform: scale(1);
-    }
-  }
-  .row {margin-bottom: 10px;}
 
-  .ngl {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-  }
 
-  .red{
-      background: #FF2D55 !important;
-  }
 
-  #miBoton:visited{
-    background:gray;
-    color:gray;
-  }

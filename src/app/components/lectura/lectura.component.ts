@@ -1,33 +1,27 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import {Lectura} from 'src/app/core/models/lectura.model';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Lectura } from '../../core/models/lectura.model';
 
 @Component({
   selector: 'app-lectura',
   templateUrl: './lectura.component.html',
   styleUrls: ['./lectura.component.css']
 })
-export class LecturaComponent implements OnInit {
 
-  @Input() lectura: Lectura;
-  @Output() lecturaClicked: EventEmitter<any> = new EventEmitter();
+export class LecturaComponent {
 
-  today = new Date();
-  constructor() {
-    console.log('constructor');
-   }
+  idsBloqueados: string[] = ['4497', '5511', '6631'];
 
-  ngOnChanges(changes: SimpleChanges): void {
-    //console.log('ngOnChanges');
-    console.log(changes);
+  @Input() lectura!: Lectura;
+  @Output() lecturaClicked = new EventEmitter<Lectura>();
+
+  //constructor(private router: Router) {}
+
+  onStart(): void  {
+    // Esto emite el evento al componente padre
+    //console.log('CLICK EN LECTURA:', this.lectura.id);
+    this.lecturaClicked.emit(this.lectura);
+
+    // Esto hace la redirección a otra ruta, ejemplo: '/lectura/:id'
+    //this.router.navigate(['/lectura', this.lectura.id]);
   }
-
-  ngOnInit(): void {
-    //console.log('ngOnInit');
-  }
-  addCart(): void {
-    console.log('lectura por leer');
-    this.lecturaClicked.emit(this.lectura.id);
-  }
-
-
 }

@@ -1,6 +1,6 @@
 <?php
 function retornarConexion() {
-  $con=mysqli_connect("148.228.13.11:3307","bdtutor","1B0Gc8q","bdtutor");
+  $con=mysqli_connect("localhost", "root", "","bdtutor");
   if (!$con) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
     echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;

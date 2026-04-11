@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><style>
+<meta charset="utf-8">
+
+<style>
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff; /*  importante */
+}
+
 #pg-header div, #pg-footer div {
     all: initial;
     display: block;
@@ -76,10 +85,21 @@
         margin-left: auto;
         margin-right: auto;
         }</style><title>he Project Gutenberg eBook of The Awakening and Selected Short Stories, by Kate Chopin</title>
-<style>body {
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align: justify
+<style>
+    body {
+     margin: 60px  auto;/*altura,cambie*/
+    max-width: 800px;
+    padding: 3em;
+    background: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: justify;
+
+    margin-left: auto;
+    margin-right: auto;
+
+
     }
 h1, h2, h3, h4, h5 {
     text-align: center;
@@ -152,7 +172,24 @@ a:visited {
     }
 a:hover {
     color: red
-    }</style>
+    }
+    .book-page {
+    
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 60px;
+    background: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+
+
+    box-shadow: inset
+    0 0 0 1px #ddd,
+    0 10px 30px rgba(0,0,0,0.15);
+}
+
+    
+    </style>
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/">
 <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
 <meta name="dc.title" content="The Awakening, and Selected Short Stories">
@@ -175,7 +212,8 @@ a:hover {
 <meta property="og:image" content="https://www.gutenberg.org/ebooks/160/pg160.cover.medium.jpg">
 </head>
 <body>
-
+    <div class="book-page">
+<div class="pg-page">
 <section class="pg-boilerplate pgheader" id="pg-header" lang="en"><h2 id="pg-header-heading" title="">The Project Gutenberg eBook of <span lang="en">The Awakening, and Selected Short Stories</span></h2>
 
 <div>This ebook is for the use of anyone anywhere in the United States and
@@ -204,7 +242,7 @@ before using this eBook.</div>
 <h2 class="no-break">by Kate Chopin</h2>
 <hr>
 <h3>Contents</h3>
-<table style="">
+<table style="width: 100%; border-collapse: collapse;">
 <tbody><tr>
 <td> <a href="#link2H_4_0001" class="pginternal"><b>THE AWAKENING</b></a></td>
 </tr>
@@ -9015,7 +9053,8 @@ This website includes information about Project Gutenberg™,
 including how to make donations to the Project Gutenberg Literary
 Archive Foundation, how to help produce our new eBooks, and how to
 subscribe to our email newsletter to hear about new eBooks.
+ <div class="page-number">Page 1</div>
 </div>
-
+ </div>
 </section></body>
 </html>

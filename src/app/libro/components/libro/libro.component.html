@@ -3,4 +3,4 @@
 <p>{{ libro.autor | slice:0:25 }}</p>
 <!--<p>{{ today | date:'HH:mm' }}</p>-->
 <!--<button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>-->
-<a [routerLink]="['/libro', libro.id]">Leer</a>
+<a [routerLink]="['/libro', libro.id, 'leer']">Leer</a>

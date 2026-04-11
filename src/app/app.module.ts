@@ -30,6 +30,10 @@ import { LecturaComponent } from './components/lectura/lectura.component';
 import { LecturaDetailComponent } from './components/lectura-detail/lectura-detail.component';
 import { TipComponent } from './components/tip/tip.component';
 import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
+import { CuestionarioViewerComponent } from './cuestionario-viewer/cuestionario-viewer.component';
+import { SafeUrlPipe } from './safe-url.pipe';
+import { LibroViewerComponent } from './libro-viewer/libro-viewer.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { BienvenidoComponent } from './components/bienvenido/bienvenido.componen
     LecturaComponent,
     LecturaDetailComponent,
     TipComponent,
-    BienvenidoComponent
+    BienvenidoComponent,
+    CuestionarioViewerComponent,
+    SafeUrlPipe,
+    LibroViewerComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

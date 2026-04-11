@@ -10,6 +10,7 @@ import { DataApiService } from 'src/app/services/data-api.service';
 export class HomeComponent implements OnInit {
   title = 'Statistics';
   temaResult = '';
+  statistics:any[] = [];
 
   constructor(private apiservice: DataApiService) { }
 
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit {
     this.getDominio();
     this.getTutor();
     this.getTema();
+    this.getStatistics();
+
   }
 
   getMaterias(){
@@ -44,5 +47,14 @@ export class HomeComponent implements OnInit {
       console.log(res);
     });
   }
+
+  getStatistics(){
+
+   this.apiservice.getStatistics().subscribe((res: any) => {
+    this.statistics = res;
+    console.log(this.statistics);
+});
+
+}
 
 }

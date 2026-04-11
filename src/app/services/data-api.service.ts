@@ -46,6 +46,11 @@ export class DataApiService {
     return this.http.get(path, this.httpOptions);
   }
 
+  getStatistics(){
+  return this.http.get('http://localhost/tutor/api/statistics.php');
+}
+
+
   // login(usuario: any) {
   //   console.log('Login: ' + this.apiURL);
   //   const authData = { ...usuario };

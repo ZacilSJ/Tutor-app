@@ -1,0 +1,8 @@
+<div class="libro-viewer-container">
+  <!--<app-menu-lateral></app-menu-lateral>-->
+<!--<app-libro *ngFor="let libro of libros" 
+[libro]=""libro
+></app-libro> -->
+
+  <iframe #iframeLibro [src]="libroUrl | safeUrl" ></iframe>
+</div>
