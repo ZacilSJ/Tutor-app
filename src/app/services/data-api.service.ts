@@ -46,8 +46,8 @@ export class DataApiService {
     return this.http.get(path, this.httpOptions);
   }
 
-  getStatistics(){
-  return this.http.get('http://localhost/tutor/api/statistics.php');
+  getStatistics(idUsuario: string){
+  return this.http.get(`https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=${idUsuario}`);
 }
 
 

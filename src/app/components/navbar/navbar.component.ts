@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
-declare const $: any;
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,16 +8,33 @@ declare const $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    // $(document).ready(function(){
-    //   $('.sidenav').sidenav();
-    //   $('#sidenav-1').sidenav({ edge: 'left' });
-    // });
+  ngOnInit(): void {}
+
+  // 🏠 Home
+  irAHome() {
+    this.router.navigate(['/home']);
   }
-  irAStatistics(){
-    console.log("CLICK FUNCIONANDO");
-    window.location.href = 'http://localhost/tutor/assets/lecturas/statistics.php';
+
+  // 👤 Usuarios / perfil (ajústalo si tienes otra ruta)
+  irAUsuarios() {
+    this.router.navigate(['/usuarios']);
+  }
+
+  // 📝 Cuestionarios
+  irACuestionarios() {
+    this.router.navigate(['/cuestionario']);
+  }
+
+  // 📊 Statistics (TU CASO IMPORTANTE)
+  irAStatistics() {
+    this.router.navigate(['/statistics']);
+  }
+
+  // 🚪 Logout
+  logout() {
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
   }
 }
