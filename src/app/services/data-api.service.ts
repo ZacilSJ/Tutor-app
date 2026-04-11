@@ -46,8 +46,9 @@ export class DataApiService {
     return this.http.get(path, this.httpOptions);
   }
 
-  getStatistics(idUsuario: string){
-  return this.http.get(`https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=${idUsuario}`);
+  getStatistics(){
+  const id = sessionStorage.getItem('ident');
+  return this.http.get(`https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=${id}`);
 }
 
 
