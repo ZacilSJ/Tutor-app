@@ -21,7 +21,7 @@ export class HomeAppComponent implements OnInit {
     //  console.log(user);
     //});
   }
-  irAStatistics(){
-    window.location.href = 'http://localhost/tutor/assets/lecturas/statistics.php';
-  }
+ irAStatistics(){
+  this.router.navigate(['/statistics']);
+}
 }
