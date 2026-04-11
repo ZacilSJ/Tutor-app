@@ -27,9 +27,12 @@ export class StatisticsComponent implements OnInit {
 
         console.log(res); // para verificar
 
-        this.usuario = res.usuario;
+  this.usuario = res.usuario;
 
-        this.crearGrafica(res.labels, res.data);
+  
+  setTimeout(() => {
+    this.crearGrafica(res.labels, res.data);
+  }, 200);
       });
   }
 
@@ -37,7 +40,7 @@ export class StatisticsComponent implements OnInit {
 
     const canvas = document.getElementById('graficaGeneral') as HTMLCanvasElement;
 
-    // 🔥 Scroll dinámico
+    // Scroll dinámico
     if (labels.length > 15) {
       canvas.style.width = (labels.length * 50) + "px";
     }
