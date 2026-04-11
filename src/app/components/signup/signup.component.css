@@ -39,7 +39,29 @@
 .btn-custom {
   background-color: #435585 !important;
 }
+@media (max-width: 768px) {
+  .registro-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
 
+  .registro-form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .registro-panel {
+    display: none; /* ocultamos panel azul */
+  }
+
+  .icon-registro {
+    width: 200px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
 
 
 
