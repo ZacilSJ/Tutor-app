@@ -21,7 +21,7 @@ export class StatisticsComponent implements OnInit {
   cargarDatos() {
     const id = sessionStorage.getItem('ident');
 
-    this.http.get<any>(`https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=${id}`)
+    this.http.get<any>(`https://tutor-app.fwh.is/assets/lecturas/statistics-api.php?idUsuario=${id}`)
    // this.http.get<any>('http://localhost/tutor/api/statistics.php')
       .subscribe(res => {
 
