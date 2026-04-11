@@ -1,4 +1,2 @@
-v14.16.0
-// Este archivo sirve para indicar la versión de 'node' en la que corre este proyecto
-// es particularmente útil en trabajos en equipo.
-//const { isPropertyDeclaration } = require("typescript")
+18
+
