@@ -7,12 +7,12 @@ import { Observable } from "rxjs";
 })
 export class UsersService {
 
-  private base = 'http://localhost/Tutor/assets/';  // aquí se coloca la ruta donde están guardados los php dentro de assets
+  private base = 'https://tutor-app.fwh.is/getHistorial';  // aquí se coloca la ruta donde están guardados los php dentro de assets
 
   constructor(private http: HttpClient) {}
 
   guardarregistro(registro:any):Observable<any> {
- return this.http.post(this.base + 'guardarregistro.php', registro,
+ return this.http.post(this.base + '/guardarregistro.php', registro,
     //{ headers: { 'Content-Type': 'application/json' } }
   );
   }
@@ -34,7 +34,7 @@ export class UsersService {
   }
 
   getUser(){
-    return this.http.get(`${this.base}buscausuario.php`)
+    return this.http.get(`${this.base}/buscausuario.php`)
   }
 
   getUserLogged(){
