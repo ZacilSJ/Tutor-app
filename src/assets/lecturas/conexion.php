@@ -1,24 +1,17 @@
 <?php
 function retornarConexion() {
-  $servidor = "localhost";
-  $usuario = "root";  
-  $password = "";
-  $bd = "bdtutor";
 
-  $con=mysqli_connect("$servidor", "$usuario", "$password","$bd");
+  $servidor = "sql101.infinityfree.com";
+  $usuario = "if0_41638629";
+  $password = "F945ghjo"; // ← la de InfinityFree
+  $bd = "if0_41638629_dbtutor";
+
+  $con = mysqli_connect($servidor, $usuario, $password, $bd);
+
   if (!$con) {
-    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
+    die("Error de conexión: " . mysqli_connect_error());
+  }
 
-//echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
-//echo "Información del host: " . mysqli_get_host_info($con) . PHP_EOL;
   return $con;
 }
-/*function retornarConexion() {
-  $con=mysqli_connect("localhost","root","","bdtutor");
-  return $con;
-}*/
 ?>
