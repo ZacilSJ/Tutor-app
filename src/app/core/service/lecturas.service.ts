@@ -28,7 +28,7 @@ export class LecturasService {
     {id:'5574',title:'Social media influencers',FKGL:'7.52',RDL2:'20.17',imagen:'assets/imagenes/socialmedia.jpg' , href: 'assets/lecturas/cuestionario_5574.htm', archivo: 'cuestionario_5574.htm'},
     {id:'5139',title:'Maria Kochetkova',FKGL:'9.98',RDL2:'19.03',imagen:'assets/imagenes/Mariako.jpg'  , href: 'assets/lecturas/cuestionario_5139.htm', archivo: 'cuestionario_5139.htm'},
     {id:'5004',title:'My neighborhood',FKGL:'7.87',RDL2:'18.76',imagen:'assets/imagenes/vecinos.jpg' , href: 'assets/lecturas/cuestionario_5004.htm', archivo: 'cuestionario_5004.htm'},
-    {id:'5108',title:'Meals in Britian',FKGL:'4.65',RDL2:'18.31',imagen:'assets/imagenes/MEALS.JPG'  , href: 'assets/lecturas/cuestionario_5108.htm', archivo: 'cuestionario_5108.htm'},
+    {id:'5108',title:'Meals in Britian',FKGL:'4.65',RDL2:'18.31',imagen:'assets/imagenes/MEALS.jpg'  , href: 'assets/lecturas/cuestionario_5108.htm', archivo: 'cuestionario_5108.htm'},
     {id:'5000',title:'World Markeers',FKGL:'6.17',RDL2:'16.39',imagen:'assets/imagenes/MARKEERS.jpg' , href: 'assets/lecturas/cuestionario_5000.htm', archivo: 'cuestionario_5000.htm'},
     {id:'4410',title:'Jennifer Lopez',FKGL:'6.68',RDL2:'14.54',imagen:'assets/imagenes/jenniferlopez.jpg' , href: 'assets/lecturas/cuestionario_4410.htm', archivo: 'cuestionario_4410.htm'},
     {id:'5235',title:'Dear Cole',FKGL:'2.7',RDL2:'13.73',imagen:'assets/imagenes/cole.jpg', href: 'assets/lecturas/cuestionario_5235.htm', archivo: 'cuestionario_5235.htm'},
@@ -36,6 +36,8 @@ export class LecturasService {
     {id:'5158',title:'Halle Barry',FKGL:'8.98',RDL2:'2.44',imagen:'assets/imagenes/halle.jpg', href: 'assets/lecturas/cuestionario_5158.htm', archivo: 'cuestionario_5158.htm' },
   ]
   constructor(private http: HttpClient) { }
+
+
 
   getAllLecturas(){
     return this.lecturas;

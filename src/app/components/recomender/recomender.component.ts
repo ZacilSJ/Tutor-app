@@ -37,7 +37,7 @@ export class RecomenderComponent implements OnInit {
       { id: '5574', title: "SOCIAL MEDIA INFLUENCERS", FKGL: '4.05', RDL2: '36.10', imagen: 'assets/imagenes/socialmedia.jpg' , href: 'assets/lecturas/cuestionario_5574.htm', archivo: 'cuestionario_5574.htm' },
       { id: '5139', title: "MARIA KOCHETKOVA", FKGL: '3.75', RDL2: '34.90', imagen: 'assets/imagenes/Mariako.jpg' , href: 'assets/lecturas/cuestionario_5139.htm', archivo: 'cuestionario_5139.htm' },
       { id: '5004', title: "MY NEIGHBORHOOD", FKGL: '3.60', RDL2: '34.50', imagen: 'assets/imagenes/vecinos.jpg' , href: 'assets/lecturas/cuestionario_5004.htm', archivo: 'cuestionario_5004.htm'},
-      { id: '5108', title: "MEALS IN BRITIAN", FKGL: '3.95', RDL2: '35.90', imagen: 'assets/imagenes/MEALS.JPG' , href: 'assets/lecturas/cuestionario_5108.htm', archivo: 'cuestionario_5108.htm' },
+      { id: '5108', title: "MEALS IN BRITIAN", FKGL: '3.95', RDL2: '35.90', imagen: 'assets/imagenes/MEALS.jpg' , href: 'assets/lecturas/cuestionario_5108.htm', archivo: 'cuestionario_5108.htm' },
       { id: '5000', title: "WORLD MARKEERS", FKGL: '4.00', RDL2: '36.00', imagen: 'assets/imagenes/MARKEERS.jpg' , href: 'assets/lecturas/cuestionario_5000.htm', archivo: 'cuestionario_5000.htm' },
       { id: '4410', title: "JENNIFER LOPEZ", FKGL: '3.80', RDL2: '35.60', imagen: 'assets/imagenes/jenniferlopez.jpg' , href: 'assets/lecturas/cuestionario_4410.htm', archivo: 'cuestionario_4410.htm'},
       { id: '5235', title: "DEAR COLE", FKGL: '3.90', RDL2: '36.10', imagen: 'assets/imagenes/cole.jpg' , href: 'assets/lecturas/cuestionario_5235.htm', archivo: 'cuestionario_5235.htm'},
