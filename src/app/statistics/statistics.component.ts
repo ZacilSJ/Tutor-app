@@ -29,7 +29,7 @@ export class StatisticsComponent implements OnInit {
       return;
     }
 
-    this.http.get<any>(`https://tutor-app.fwh.is/assets/lecturas/statistics-api.php?idUsuario=${id}`)
+    this.http.get<any>('assets/lecturas/statistics-api.php?idUsuario=' + id)
       .subscribe({
         next: (res) => {
 
