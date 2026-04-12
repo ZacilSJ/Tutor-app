@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-declare var Chart: any;
+import { Chart } from 'chart.js/auto';
+//declare var Chart: any;
 
 @Component({
   selector: 'app-statistics',
@@ -12,7 +12,7 @@ export class StatisticsComponent implements OnInit {
 
   usuario: string = '';
 
-  // 🔥 referencia real al canvas (clave)
+  //  referencia real al canvas (clave)
   @ViewChild('grafica') canvasRef!: ElementRef;
 
   constructor(private http: HttpClient) {}

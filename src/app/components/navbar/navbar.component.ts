@@ -12,27 +12,27 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // 🏠 Home
+  //  Home
   irAHome() {
     this.router.navigate(['/home']);
   }
 
-  // 👤 Usuarios / perfil (ajústalo si tienes otra ruta)
+  // Usuarios / perfil (ajústalo si tienes otra ruta)
   irAUsuarios() {
     this.router.navigate(['/usuarios']);
   }
 
-  // 📝 Cuestionarios
+  // Cuestionarios
   irACuestionarios() {
     this.router.navigate(['/cuestionario']);
   }
 
-  // 📊 Statistics (TU CASO IMPORTANTE)
+  //  Statistics (TU CASO IMPORTANTE)
   irAStatistics() {
     this.router.navigate(['/statistics']);
   }
 
-  // 🚪 Logout
+  // Logout
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);
