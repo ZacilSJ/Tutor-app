@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from 'src/app/services/data-api.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   title = 'Statistics';
   temaResult = '';
-  statistics:any[] = [];
+  statistics: any;
 
   constructor(private apiservice: DataApiService) { }
 
@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
     this.getTutor();
     this.getTema();
     this.getStatistics();
-
   }
 
   getMaterias(){
@@ -43,18 +42,23 @@ export class HomeComponent implements OnInit {
 
   getTema(){
     this.apiservice.getAllTema().subscribe((res: any) => {
-      // this.temaResult = res.tema[0].nombre;
       console.log(res);
     });
   }
 
-  getStatistics(){
 
-   this.apiservice.getStatistics().subscribe((res: any) => {
-    this.statistics = res;
-    console.log(this.statistics);
-});
+  getStatistics(idUsuario?: string){
+    const id = sessionStorage.getItem('ident');
 
-}
+    if(!id){
+      console.error("No hay usuario logueado");
+      return;
+    }
+
+    this.apiservice.getStatistics(id!).subscribe((res: any) => {
+      this.statistics = res;
+      console.log("STATS:", this.statistics);
+    });
+  }
 
 }

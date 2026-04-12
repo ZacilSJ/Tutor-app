@@ -46,10 +46,17 @@ export class DataApiService {
     return this.http.get(path, this.httpOptions);
   }
 
-  getStatistics(){
-  const id = sessionStorage.getItem('ident');
-  return this.http.get(`https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=${id}`);
+getStatistics(idUsuario: string){
+  return this.http.get(
+    `https://tutor-app.fwh.is/assets/lecturas/statistics-api.php?idUsuario=${idUsuario}`
+  );
 }
+
+
+ // getStatistics(){
+  //const id = sessionStorage.getItem('ident');
+  //return this.http.get(`https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=${id}`);
+//}
 
 
   // login(usuario: any) {
@@ -82,7 +89,7 @@ export class DataApiService {
 
   // }
 
-  handleError(error) {
+  handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error
