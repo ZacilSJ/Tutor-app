@@ -1,4 +1,4 @@
-declare var Chart: any;
+import Chart from 'chart.js/auto';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -75,26 +75,28 @@ export class StatisticsComponent implements OnInit {
         }]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          xAxes: [{
-            ticks: {
-              autoSkip: false,
-              maxRotation: 60,
-              minRotation: 45,
-              fontSize: 14
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              beginAtZero: true,
-              max: 100,
-              stepSize: 10
-            }
-          }]
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    x: {
+      ticks: {
+        autoSkip: false,
+        maxRotation: 60,
+        minRotation: 45,
+        font: {
+          size: 14
         }
       }
+    },
+    y: {
+      beginAtZero: true,
+      max: 100,
+      ticks: {
+        stepSize: 10
+      }
+    }
+  }
+}
     });
   }
 }
