@@ -1,4 +1,4 @@
-import Chart from 'chart.js/auto';
+declare var Chart: any;
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
