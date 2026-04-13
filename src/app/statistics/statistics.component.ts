@@ -26,17 +26,23 @@ export class StatisticsComponent implements OnInit {
       return;
     }
 
-    this.http.get<any>('assets/lecturas/statistics-api.php?idUsuario=' + id)
+    this.http.get<any>('https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=' + id)
       .subscribe({
         next: (res) => {
 
-          console.log("DATOS:", res);
+            console.log("DATOS:", res);
 
-          this.usuario = res.usuario;
+ 
+  if (!res || !res.labels || !res.data) {
+    console.error("Respuesta inválida del servidor", res);
+    return;
+  }
 
-          setTimeout(() => {
-            this.crearGrafica(res.labels, res.data);
-          }, 100);
+  this.usuario = res.usuario;
+
+  setTimeout(() => {
+    this.crearGrafica(res.labels, res.data);
+  }, 100);
         },
         error: (err) => {
           console.error("Error al cargar estadísticas:", err);
@@ -54,7 +60,7 @@ export class StatisticsComponent implements OnInit {
       return;
     }
 
-    // 🔥 VALIDAR QUE CHART EXISTA
+    // VALIDAR QUE CHART EXISTA
     const ChartJS = (window as any).Chart;
 
     if (!ChartJS) {
@@ -67,7 +73,7 @@ export class StatisticsComponent implements OnInit {
       canvas.style.width = (labels.length * 50) + "px";
     }
 
-    // 🔥 CREAR GRÁFICA
+    // CREAR GRÁFICA
     new ChartJS(ctx, {
       type: 'bar',
       data: {
