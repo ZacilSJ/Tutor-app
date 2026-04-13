@@ -1,3 +1,4 @@
+import * as Chart from 'chart.js';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -29,7 +30,8 @@ export class StatisticsComponent implements OnInit {
     this.http.get<any>('https://tutor-app.fwh.is/assets/lecturas/statistics.php?idUsuario=' + id)
       .subscribe({
         next: (res) => {
-
+            console.log("TIPO DE RESPUESTA", typeof res);
+            console.log("RESPUESTA COMPLETA:", res);
             console.log("DATOS:", res);
 
  
