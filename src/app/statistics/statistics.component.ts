@@ -1,4 +1,4 @@
-declare var Chart: any;
+
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -63,7 +63,7 @@ export class StatisticsComponent implements OnInit {
       canvas.style.width = (labels.length * 50) + "px";
     }
 
-    new Chart(ctx, {
+     new (window as any).Chart(ctx, {
       type: 'bar',
       data: {
         labels: labels,
@@ -74,27 +74,25 @@ export class StatisticsComponent implements OnInit {
           backgroundColor: 'rgba(54, 162, 235, 0.6)'
         }]
       },
-      options: {
+     options: {
   responsive: true,
   maintainAspectRatio: false,
   scales: {
-    x: {
+    xAxes: [{
       ticks: {
         autoSkip: false,
         maxRotation: 60,
         minRotation: 45,
-        font: {
-          size: 14
-        }
+        fontSize: 14
       }
-    },
-    y: {
-      beginAtZero: true,
-      max: 100,
+    }],
+    yAxes: [{
       ticks: {
+        beginAtZero: true,
+        max: 100,
         stepSize: 10
       }
-    }
+    }]
   }
 }
     });
