@@ -1,6 +1,7 @@
-import * as Chart from 'chart.js';
+import { Chart, registerables } from 'chart.js';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-statistics',
@@ -16,6 +17,7 @@ export class StatisticsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    Chart.register(...registerables);
     this.cargarDatos();
   }
 
@@ -62,13 +64,7 @@ export class StatisticsComponent implements OnInit {
       return;
     }
 
-    // VALIDAR QUE CHART EXISTA
-    const ChartJS = (window as any).Chart;
-
-    if (!ChartJS) {
-      console.error("Chart no está cargado");
-      return;
-    }
+  
 
     // scroll dinámico
     if (labels.length > 15) {
@@ -76,7 +72,7 @@ export class StatisticsComponent implements OnInit {
     }
 
     // CREAR GRÁFICA
-    new ChartJS(ctx, {
+    new Chart(ctx, {
       type: 'bar',
       data: {
         labels: labels,
@@ -91,22 +87,21 @@ export class StatisticsComponent implements OnInit {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          xAxes: [{
-            ticks: {
-              autoSkip: false,
-              maxRotation: 60,
-              minRotation: 45,
-              fontSize: 14
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              beginAtZero: true,
-              max: 100,
-              stepSize: 10
-            }
-          }]
-        }
+  x: {
+    ticks: {
+      autoSkip: false,
+      maxRotation: 60,
+      minRotation: 45
+    }
+  },
+  y: {
+    beginAtZero: true,
+    max: 100,
+    ticks: {
+      stepSize: 10
+    }
+  }
+}
       }
     });
   }
