@@ -1,7 +1,5 @@
-
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-statistics',
@@ -12,7 +10,6 @@ export class StatisticsComponent implements OnInit {
 
   usuario: string = '';
 
-  // referencia al canvas
   @ViewChild('grafica') canvasRef!: ElementRef;
 
   constructor(private http: HttpClient) {}
@@ -37,7 +34,6 @@ export class StatisticsComponent implements OnInit {
 
           this.usuario = res.usuario;
 
-          // esperar a que el canvas exista
           setTimeout(() => {
             this.crearGrafica(res.labels, res.data);
           }, 100);
@@ -58,12 +54,21 @@ export class StatisticsComponent implements OnInit {
       return;
     }
 
-    // scroll dinámico si hay muchas barras
+    // 🔥 VALIDAR QUE CHART EXISTA
+    const ChartJS = (window as any).Chart;
+
+    if (!ChartJS) {
+      console.error("Chart no está cargado");
+      return;
+    }
+
+    // scroll dinámico
     if (labels.length > 15) {
       canvas.style.width = (labels.length * 50) + "px";
     }
 
-     new (window as any).Chart(ctx, {
+    // 🔥 CREAR GRÁFICA
+    new ChartJS(ctx, {
       type: 'bar',
       data: {
         labels: labels,
@@ -74,27 +79,27 @@ export class StatisticsComponent implements OnInit {
           backgroundColor: 'rgba(54, 162, 235, 0.6)'
         }]
       },
-     options: {
-  responsive: true,
-  maintainAspectRatio: false,
-  scales: {
-    xAxes: [{
-      ticks: {
-        autoSkip: false,
-        maxRotation: 60,
-        minRotation: 45,
-        fontSize: 14
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [{
+            ticks: {
+              autoSkip: false,
+              maxRotation: 60,
+              minRotation: 45,
+              fontSize: 14
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 100,
+              stepSize: 10
+            }
+          }]
+        }
       }
-    }],
-    yAxes: [{
-      ticks: {
-        beginAtZero: true,
-        max: 100,
-        stepSize: 10
-      }
-    }]
-  }
-}
     });
   }
 }
