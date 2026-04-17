@@ -1,0 +1,72 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+.cuestionario-wrapper {
+  padding: 20px;
+}
+
+form.cuestionario {
+  background: linear-gradient(45deg, #eee, #dfdfdf);
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+/* preguntas */
+.pregunta {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/* opciones */
+.opcion {
+  padding: 5px 0;
+}
+
+/* botón */
+button {
+  padding: 10px 20px;
+  background: #7db500;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+  form.cuestionario {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .pregunta {
+    padding: 10px;
+  }
+
+  .cuestionario-wrapper {
+    padding: 10px;
+  }
+
+  /* quitar números laterales */
+  .pregunta:before {
+    display: none;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+}

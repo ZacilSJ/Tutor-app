@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<style>
+    body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+}
+
+form.cuestionario {
+    display: block;
+    background: rgb(238, 238, 238);
+    background: linear-gradient(45deg, rgba(238, 238, 238, 1) 0%, rgba(223, 223, 223, 1) 100%);
+    max-width: 980px;
+    margin: 30px 0 30px 150px; /*derecha*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: 10px 10px 9px 0px rgba(0, 0, 0, 0.49);
+    counter-reset: list-number;
+}
+
+form.cuestionario>h1 {
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+form.cuestionario div.descripcion {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+    font-size: 12px;
+    text-align: right;
+
+}
+
+form.cuestionario div.descripcion h1 {
+    font-size: 14px;
+}
+
+form.cuestionario div.instrucciones {
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+
+}
+
+form.cuestionario div.lectura {
+    font-size: 14pt;
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+
+}
+
+form.cuestionario div.audio {
+    font-size: 14pt;
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+
+}
+
+form.cuestionario div.imagen {
+    font-size: 14pt;
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+
+}
+
+form.cuestionario div.imagen img {
+    max-width: 100%;
+}
+
+form.cuestionario div.preguntas.lista div.pregunta {
+    background: #FFF;
+    font-size: 14px;
+    display: block;
+    border: 1px solid #CCC;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 10px 80px;
+    position: relative;
+}
+
+form.cuestionario div.preguntas.lista div.pregunta:before {
+    counter-increment: list-number;
+    content: counter(list-number);
+
+    width: 35px;
+    height: 100%;
+    display: inline-flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background-color: #369;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+form.cuestionario div.preguntas.lista div.pregunta div.texto {
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px;
+}
+
+form.cuestionario div.preguntas.lista div.pregunta div.opciones {
+    padding: 10px 30px;
+}
+
+form.cuestionario div.preguntas.lista div.pregunta div.opcion {
+    padding: 5px 15px;
+}
+
+form.cuestionario div.preguntas.parrafo {
+    line-height: 2;
+}
+
+form.cuestionario div.preguntas.parrafo div.pregunta span.opcion.select {
+    background-color: #9C7;
+    margin: 2px;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+form.cuestionario div.acciones {
+    font-size: 14pt;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+    padding: 30px;
+
+}
+
+form.cuestionario div.acciones button {
+    font-size: 12pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 8px 20px;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.49);
+    background: linear-gradient(0deg, #8fcf00 0%, #6b9c00 100%);
+    background-color: #7db500;
+    border: 1px solid #5a8200;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form.cuestionario div.acciones button:active {
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.49);
+}
+
+@media (max-width: 768px) {
+
+  form.cuestionario {
+    margin: 10px !important;
+    padding: 15px !important;
+    max-width: 100% !important;
+  }
+
+  form.cuestionario div.pregunta {
+    padding: 10px !important;
+  }
+
+  form.cuestionario div.pregunta:before {
+    display: none !important;
+  }
+
+  button {
+    width: 100% !important;
+  }
+
+}
+
+</style>
+
+
+</head>
+
+<body>
+    <form action="https://blue-anteater-156343.hostingersite.com/api/evaluar.php" method="post" class="cuestionario">
+        <input name="idcuestionario" type="hidden" value="5139">
+        <h1>Reading</h1>
+        <div class="descripcion"></div>
+        <div class="instrucciones">Instructions:Read the information and choose the correct answer to the questions.</div>
+
+        
+        
+        
+        
+        <div class="lectura">
+            <div style="text-align: justify;"><span style="font-family: Calibri, sans-serif; font-size: large;">Born
+in Moscow, Maria Kochetkova trained at the Bolshoi Ballet School for eight
+years before dancing with The Royal Ballet and English National Ballet in
+London. She joined The San Francisco Ballet as a Principal Dancer from 2007 to
+2018, working at the same time for the American Ballet Theater since 2015.
+Afterwards, she performed as a freelance dancer for two years. In 2020, she
+became the lead Principal Dancer at the Finnish National Ballet.</span></div>        </div>
+
+        <div class="preguntas lista">
+            <div class="pregunta"><div class="texto">Where is she from?</div><div class="opciones"><div class="opcion radio"><input id="rad157061" class="answer" type="radio" name="respuestas[47928]" value="Morocco:=0.000" required><label for="rad157061">Morocco</label></div><div class="opcion radio"><input id="rad157062" class="answer" type="radio" name="respuestas[47928]" value="Moscow:=1.000" required><label for="rad157062">Moscow</label></div><div class="opcion radio"><input id="rad157063" class="answer" type="radio" name="respuestas[47928]" value="Monaco:=0.000" required><label for="rad157063">Monaco</label></div></div></div><div class="pregunta"><div class="texto">What&acute;s her name?</div><div class="opciones"><div class="opcion radio"><input id="rad157064" class="answer" type="radio" name="respuestas[47929]" value="Marley Kochetkova:=0.000" required><label for="rad157064">Marley Kochetkova</label></div><div class="opcion radio"><input id="rad157065" class="answer" type="radio" name="respuestas[47929]" value="Mary  Kochetkova:=0.000" required><label for="rad157065">Mary  Kochetkova</label></div><div class="opcion radio"><input id="rad157066" class="answer" type="radio" name="respuestas[47929]" value="Maria Kochetkova:=1.000" required><label for="rad157066">Maria Kochetkova</label></div></div></div><div class="pregunta"><div class="texto">What&acute;s her profession?</div><div class="opciones"><div class="opcion radio"><input id="rad157067" class="answer" type="radio" name="respuestas[47930]" value="She is a professional dancer:=1.000" required><label for="rad157067">She is a professional dancer</label></div><div class="opcion radio"><input id="rad157068" class="answer" type="radio" name="respuestas[47930]" value="She is a professional footballer:=0.000" required><label for="rad157068">She is a professional footballer</label></div><div class="opcion radio"><input id="rad157069" class="answer" type="radio" name="respuestas[47930]" value="She is a professional skater:=0.000" required><label for="rad157069">She is a professional skater</label></div></div></div><div class="pregunta"><div class="texto">How many years was she the principal dancer of The San Francisco Ballet?</div><div class="opciones"><div class="opcion radio"><input id="rad157070" class="answer" type="radio" name="respuestas[47931]" value="10 years:=0.000" required><label for="rad157070">10 years</label></div><div class="opcion radio"><input id="rad157071" class="answer" type="radio" name="respuestas[47931]" value="11 years:=1.000" required><label for="rad157071">11 years</label></div><div class="opcion radio"><input id="rad157072" class="answer" type="radio" name="respuestas[47931]" value="12 years:=0.000" required><label for="rad157072">12 years</label></div></div></div><div class="pregunta"><div class="texto">What role did she get in the Finnish National Ballet?</div><div class="opciones"><div class="opcion radio"><input id="rad157073" class="answer" type="radio" name="respuestas[47932]" value="Freelance dancer:=0.000" required><label for="rad157073">Freelance dancer</label></div><div class="opcion radio"><input id="rad157074" class="answer" type="radio" name="respuestas[47932]" value="Substitute dancer:=0.000" required><label for="rad157074">Substitute dancer</label></div><div class="opcion radio"><input id="rad157075" class="answer" type="radio" name="respuestas[47932]" value="Principal dancer:=1.000" required><label for="rad157075">Principal dancer</label></div></div></div>        </div>
+        <div class="acciones">
+            <button type="submit">Enviar respuestas</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
